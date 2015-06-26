@@ -77,7 +77,7 @@ final class GzJarCopyAction implements CopyAction {
                 ZipEntry archiveEntry = new ZipEntry(path);
                 archiveEntry.setTime(fileDetails.getLastModified());
                 zipOutStr.putNextEntry(archiveEntry);
-                GZIPOutputStream out = new GZIPOutputStream(zipOutStr);
+                GZIPOutputStream out = new GZIPOutputStream(zipOutStr, true);
                 fileDetails.copyTo(out);
                 out.flush();
                 zipOutStr.closeEntry();
