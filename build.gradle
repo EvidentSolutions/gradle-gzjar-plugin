@@ -1,0 +1,33 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.9.0'
+    id 'pl.allegro.tech.build.axion-release' version '1.2.4'
+}
+
+repositories {
+    jcenter()
+}
+
+scmVersion {
+    tag {
+        prefix = 'v'
+        versionSeparator = ''
+    }
+}
+
+group = 'fi.evident.gradle.gzjar'
+project.version = scmVersion.version
+
+pluginBundle {
+    website = 'https://github.com/EvidentSolutions/gradle-gzjar-plugin'
+    vcsUrl = 'https://github.com/EvidentSolutions/gradle-gzjar-plugin'
+    description = 'Gradle plugin providing GzJar task that builds jar-files which include .gz -versions of all their contents'
+    tags = ['jar', 'gz', 'zip']
+
+    plugins {
+        gzjarPlugin {
+            id = 'fi.evident.gzjar'
+            displayName = 'Gradle GzJar plugin'
+        }
+    }
+}
