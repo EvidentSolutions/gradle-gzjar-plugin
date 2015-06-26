@@ -5,7 +5,7 @@ every resource. Can be used as a drop-in replacement for normal `Jar`.
 
 ```groovy
 plugins {
-    id "fi.evident.gzjar" version "0.1.0"
+    id "fi.evident.gzjar" version "0.1.1"
 }
 
 task frontendJar(type: fi.evident.gradle.gzjar.tasks.GzJar, dependsOn: buildAssets) {
