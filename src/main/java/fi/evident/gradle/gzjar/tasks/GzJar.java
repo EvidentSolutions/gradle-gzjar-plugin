@@ -6,7 +6,7 @@ import org.gradle.api.tasks.bundling.AbstractArchiveTask;
 public class GzJar extends AbstractArchiveTask {
 
     public GzJar() {
-        setExtension("jar");
+        getArchiveExtension().set("jar");
     }
 
     @Override
